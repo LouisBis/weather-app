@@ -45,7 +45,7 @@ onMounted(() => {
       <h2 class="text-2xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
     </div>
     <div v-if="weather">
-      <IconWeather01d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '01d'" />
+      <IconWeather01d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto" v-if="icon === '01d'" />
       <IconWeather02d class="fill-stone-400 dark:fill-lime-300 animate-pulse" v-if="icon === '02d'" />
       <IconWeather03d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '03d'" />
       <IconWeather04d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '04d'" />
@@ -53,7 +53,7 @@ onMounted(() => {
       <IconWeather10d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '10d'" />
       <IconWeather13d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '13d'" />
       <IconWeather50d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '50d'" />
-      <p class="text-8xl	text-gray-900 dark:text-lime-300">
+      <p class="text-4xl md:text-6xl lg:text-8xl	text-gray-900 dark:text-lime-300">
         {{ temp }}°C
       </p>
     </div>
