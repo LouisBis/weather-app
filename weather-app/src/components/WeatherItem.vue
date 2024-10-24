@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import WeatherIcons from './WeatherIcons.vue';
-import { getWeather } from '@/services/weatherService';
+import { getCurrentWeather } from '@/services/weatherService';
 
 
 const city = ref("Montreuil");
@@ -13,7 +13,7 @@ const error = ref(null);
 const fetchWeather = async () => {
   try {
     // console.log('Fetching weather data...');
-    const data = await getWeather(city.value);
+    const data = await getCurrentWeather(city.value);
     // console.log('Weather data received:', data);
     weather.value = data.weather[0].main;
     icon.value = data.weather[0].icon;

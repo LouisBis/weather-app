@@ -1,7 +1,8 @@
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router';
 // import HelloWorld from './components/WeatherItem.vue';
-import WeatherItem from './components/WeatherItem.vue';
+import CitySearch from './components/CitySearch.vue';
+// import WeatherItem from './components/WeatherItem.vue';
 </script>
 
 <template>
@@ -20,7 +21,8 @@ import WeatherItem from './components/WeatherItem.vue';
       </nav> -->
     <!-- </div>
   </header> -->
-    <WeatherItem />
+    <!-- <WeatherItem /> -->
+    <CitySearch />
   </div>
 
 </template>
