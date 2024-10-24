@@ -1,13 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import IconWeather01d from './icons/IconWeather01d.vue';
-import IconWeather02d from './icons/IconWeather02d.vue';
-import IconWeather03d from './icons/IconWeather03d.vue';
-import IconWeather04d from './icons/IconWeather04d.vue';
-import IconWeather09d from './icons/IconWeather09d.vue';
-import IconWeather10d from './icons/IconWeather10d.vue';
-import IconWeather13d from './icons/IconWeather13d.vue';
-import IconWeather50d from './icons/IconWeather50d.vue';
+import WeatherIcons from './WeatherIcons.vue';
 import { getWeather } from '@/services/weatherService';
 
 
@@ -27,7 +20,7 @@ const fetchWeather = async () => {
     temp.value = Math.round(data.main.temp * 10) / 10;
 
   } catch (error) {
-    console.error('Erreur lors de la récupération des données météo:', error);
+    console.error('Error during data fetching:', error);
     throw error;
   }
 };
@@ -45,14 +38,7 @@ onMounted(() => {
       <h2 class="text-2xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
     </div>
     <div v-if="weather">
-      <IconWeather01d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto" v-if="icon === '01d'" />
-      <IconWeather02d class="fill-stone-400 dark:fill-lime-300 animate-pulse" v-if="icon === '02d'" />
-      <IconWeather03d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '03d'" />
-      <IconWeather04d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '04d'" />
-      <IconWeather09d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '09d'" />
-      <IconWeather10d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '10d'" />
-      <IconWeather13d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '13d'" />
-      <IconWeather50d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '50d'" />
+      <WeatherIcons :icon="icon" />
       <p class="text-4xl md:text-6xl lg:text-8xl	text-gray-900 dark:text-lime-300">
         {{ temp }}°C
       </p>
@@ -62,10 +48,9 @@ onMounted(() => {
     </div>
 
     <div v-else>
-      <p >Loading... <span class="relative animate-bounce ">⌛</span></p>
+      <p>Loading... <span class="relative animate-bounce ">⌛</span></p>
     </div>
-
-    <input type="text" v-model="city" v-on:keyup.enter="fetchWeather"
-      class="mt-6 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    <input type="text" v-model.trim="city" v-on:keyup.enter="fetchWeather"
+      class="mt-6 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-800 dark:text-white dark:border-none" />
   </div>
 </template>
