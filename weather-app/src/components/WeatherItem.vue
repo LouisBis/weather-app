@@ -11,10 +11,11 @@ import IconWeather50d from './icons/IconWeather50d.vue';
 import { getWeather } from '@/services/weatherService';
 
 
-let city = ref("Montreuil");
-let weather = ref("");
-let temp = ref("");
-let icon = ref("10d");
+const city = ref("Montreuil");
+const weather = ref("");
+const temp = ref("");
+const icon = ref("10d");
+const error = ref(null);
 
 const fetchWeather = async () => {
   try {
@@ -44,24 +45,24 @@ onMounted(() => {
       <h2 class="text-2xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
     </div>
     <div v-if="weather">
-      <IconWeather01d v-if="icon === '01d'" />
-      <IconWeather02d v-if="icon === '02d'" />
-      <IconWeather03d v-if="icon === '03d'" />
-      <IconWeather04d v-if="icon === '04d'" />
-      <IconWeather09d v-if="icon === '09d'" />
-      <IconWeather10d v-if="icon === '10d'" />
-      <IconWeather13d v-if="icon === '13d'" />
-      <IconWeather50d v-if="icon === '50d'" />
+      <IconWeather01d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '01d'" />
+      <IconWeather02d class="fill-stone-400 dark:fill-lime-300 animate-pulse" v-if="icon === '02d'" />
+      <IconWeather03d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '03d'" />
+      <IconWeather04d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '04d'" />
+      <IconWeather09d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '09d'" />
+      <IconWeather10d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '10d'" />
+      <IconWeather13d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '13d'" />
+      <IconWeather50d class="fill-amber-500 dark:fill-lime-300 animate-pulse" v-if="icon === '50d'" />
       <p class="text-8xl	text-gray-900 dark:text-lime-300">
         {{ temp }}°C
       </p>
     </div>
-    <div v-else-if="error">
+    <div v-else-if="error" class="text-orange-600">
       <p>Error during weather fetching {{ error }}</p>
     </div>
 
     <div v-else>
-      <p>Loading...</p>
+      <p >Loading... <span class="relative animate-bounce ">⌛</span></p>
     </div>
 
     <input type="text" v-model="city" v-on:keyup.enter="fetchWeather"

@@ -1,6 +1,5 @@
 <template>
-
-	<svg class="fill-gray-900 dark:fill-lime-300" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+	<svg  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30"
 		style="enable-background:new 0 0 30 30;" xml:space="preserve">
 		<path d="M3.89,17.6c0-0.99,0.31-1.88,0.93-2.65s1.41-1.27,2.38-1.49c0.26-1.17,0.85-2.14,1.78-2.88c0.93-0.75,2-1.12,3.22-1.12
