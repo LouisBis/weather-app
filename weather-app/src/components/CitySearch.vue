@@ -36,12 +36,21 @@ onMounted(() => {
         </form>
         <ul>
             <li v-for="suggestion in suggestions" v-bind:key="suggestion.lat">
-                <span v-if="suggestion.local_names && suggestion.local_names.fr">{{ suggestion.local_names.fr }}</span>
-                <span v-else-if="suggestion.local_names && suggestion.local_names.en">{{ suggestion.local_names.en
-                    }}</span>
-
-                <span v-if="suggestion.local_names && suggestion.country">{{ suggestion.country }}</span>
-                <span v-if="suggestion.local_names && suggestion.state">{{ suggestion.state }}</span>
+                <span v-if="suggestion.local_names && suggestion.local_names.fr">
+                    {{ suggestion.local_names.fr }}
+                </span>
+                <span v-else-if="suggestion.local_names && suggestion.local_names.en">
+                    {{ suggestion.local_names.en }}
+                </span>
+                <span v-else>
+                    {{ suggestion.name }}
+                </span>&nbsp;
+                <span v-if="suggestion.country">
+                    {{ suggestion.country }}
+                </span>&nbsp;
+                <span v-if="suggestion.state">
+                    {{ suggestion.state }}
+                </span>
             </li>
         </ul>
 
