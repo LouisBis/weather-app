@@ -12,7 +12,7 @@ export const getLocalisation = async city => {
         },
       },
     )
-    console.log(response)
+    // console.log(response)
     return response.data
   } catch (error) {
     console.error('Erreur lors de la récupération des données météo:', error)

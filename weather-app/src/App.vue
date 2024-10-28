@@ -2,27 +2,18 @@
 // import { RouterLink, RouterView } from 'vue-router';
 // import HelloWorld from './components/WeatherItem.vue';
 import CitySearch from './components/CitySearch.vue';
+import Layout from './components/Layout.vue';
+// import WeatherCard from './components/WeatherCard.vue';
 // import WeatherItem from './components/WeatherItem.vue';
 </script>
 
 <template>
+  <Layout />
   <div class="flex justify-content items-center h-screen bg-slate-100 dark:bg-gray-800">
 
-
-    <!-- <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-
-    <!-- <div class="wrapper"> -->
-    <!-- <HelloWorld msg="You did it!" /> -->
-
-    <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
-    <!-- </div>
-  </header> -->
     <!-- <WeatherItem /> -->
     <CitySearch />
+    <!-- <WeatherCard :forecast="{ 'description': 'description', 'temp': '12', 'icon': '04d', 'date': '10/10/24' }" /> -->
   </div>
 
 </template>

@@ -10,14 +10,14 @@ export const getDailyForecastWeather = async (lat, lon) => {
         params: {
           lat: lat,
           lon: lon,
-          cnt: '16',
+          cnt: '5',
           mode: 'json',
           units: 'metric',
           appid: import.meta.env.VITE_API_KEY,
         },
       },
     )
-    console.log(response)
+    // console.log(response)
     return response.data
   } catch (error) {
     console.error('Erreur lors de la récupération des données météo:', error)
