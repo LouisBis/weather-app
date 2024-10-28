@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import WeatherIcons from './WeatherIcons.vue';
-import { getCurrentWeather } from '@/services/weatherService';
+import { getCurrentWeather } from '@/services/currentWeatherService';
 
 
 const city = ref("Montreuil");
