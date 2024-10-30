@@ -1,19 +1,26 @@
 <script setup>
-// import { RouterLink, RouterView } from 'vue-router';
-// import HelloWorld from './components/WeatherItem.vue';
-import CitySearch from './components/CitySearch.vue';
-import Layout from './components/Layout.vue';
-// import WeatherCard from './components/WeatherCard.vue';
-// import WeatherItem from './components/WeatherItem.vue';
+import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
-  <Layout />
-  <div class="flex justify-content items-center h-screen bg-slate-100 dark:bg-gray-800">
-
-    <!-- <WeatherItem /> -->
-    <CitySearch />
-    <!-- <WeatherCard :forecast="{ 'description': 'description', 'temp': '12', 'icon': '04d', 'date': '10/10/24' }" /> -->
+  <div class="min-h-screen bg-slate-100 dark:bg-gray-800">
+    <header
+      class="flex p-3 h-auto mx-auto dark:bg-gray-700 bg-white rounded-b-xl shadow-md overflow-hidden justify-between">
+      <h1 class="text-xl text-gray-900 dark:text-lime-300">
+        Weather App
+      </h1>
+      <nav>
+        <RouterLink class="text-lg p-3 text-gray-900 dark:text-lime-300 dark:hover:text-orange-600" to="/">
+          Home
+        </RouterLink>
+        <RouterLink class="text-lg p-3 text-gray-900 dark:text-lime-300 dark:hover:text-orange-600" to="/forecast">
+          Forecast
+        </RouterLink>
+      </nav>
+    </header>
+    <div class="flex justify-center items-center py-4">
+      <RouterView />
+    </div>
   </div>
 
 </template>
