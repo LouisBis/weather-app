@@ -34,12 +34,12 @@ onMounted(() => {
 <template>
   <div class="p-12 max-w-md mx-auto dark:bg-gray-700 bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
     <div class="font-mono">
-      <h1 class="text-5xl text-gray-900 dark:text-lime-300">Current weather</h1>
-      <h2 class="text-2xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
+      <h1 class="text-xl text-gray-900 dark:text-lime-300">Current weather</h1>
+      <h2 class="text-xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
     </div>
     <div v-if="weather">
       <WeatherIcons :icon="icon" />
-      <p class="text-4xl md:text-6xl lg:text-8xl	text-gray-900 dark:text-lime-300">
+      <p class="text-xl	text-gray-900 dark:text-lime-300">
         {{ temp }}°C
       </p>
     </div>
