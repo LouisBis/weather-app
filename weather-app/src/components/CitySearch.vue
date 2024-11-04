@@ -91,7 +91,7 @@ onMounted(() => {
             <ul class="flex flex-row" v-if="forecasts">
                 <li v-for="forecast in forecasts" v-bind:key="forecast.dt" class="p-3">
                     <WeatherCard :icon="forecast.weather[0].icon" :dateStr="forecast.dt_txt" :temp="forecast.main.temp"
-                        :descritpion="forecast.weather[0].description" />
+                        :descritpion="forecast.weather[0].description" :error="error" />
                 </li>
             </ul>
         </div>
