@@ -21,13 +21,12 @@ const fetchWeather = async () => {
 
   } catch (err) {
     console.error('Error during data fetching:', err);
-    error.value = 'Failed to fetch weather data. Please try again later.'; // Définir le message d'erreur
+    error.value = 'Failed to fetch weather data. Please try again later.';
   }
 };
 
 onMounted(() => {
   date.value = convertDateFormat();
-  console.log(date);
   fetchWeather();
 });
 

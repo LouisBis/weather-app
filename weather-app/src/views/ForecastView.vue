@@ -1,9 +1,9 @@
 <script setup>
-import CitySearch from '../components/CitySearch.vue'
+import ForecastWeather from '@/components/ForecastWeather.vue';
 </script>
 
 <template>
     <main>
-        <CitySearch />
+        <ForecastWeather />
     </main>
 </template>
