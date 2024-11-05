@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export const getLocalisation = async city => {
   try {
@@ -11,11 +11,11 @@ export const getLocalisation = async city => {
           appid: import.meta.env.VITE_API_KEY,
         },
       },
-    )
+    );
     // console.log(response)
-    return response.data
+    return response.data;
   } catch (error) {
-    console.error('Erreur lors de la récupération des données météo:', error)
-    throw error
+    console.error('Error during logalisation fecthing:', error);
+    throw error;
   }
-}
+};

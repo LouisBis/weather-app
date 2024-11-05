@@ -8,6 +8,7 @@ const lat = ref(null);
 const lon = ref(null);
 const forecasts = ref([]);
 const city = ref('');
+const error = ref(null)
 
 const handleSearch = async (latitude, longitude) => {
     lat.value = latitude;
@@ -20,9 +21,9 @@ const fetchWeather = async (lat, lon) => {
         const data = await getDailyForecastWeather(lat, lon);
         forecasts.value = data.list;
         city.value = data.city.name;
-    } catch (error) {
-        console.error('Error during data fetching:', error);
-        throw error;
+    } catch (err) {
+        console.error('Error during data fetching:', err);
+        error.value = 'Failed to fetch weather data. Please try again later.';
     }
 };
 </script>
@@ -30,6 +31,10 @@ const fetchWeather = async (lat, lon) => {
 <template>
     <div class="flex flex-col p-12 h-auto max-w-xl mx-auto">
         <CitySearch @search="handleSearch" />
+        <div v-if="error" class=" text-orange-600">
+            <p>{{ error }}</p>
+        </div>
+
         <div v-if="city">
             <h2 class="text-2xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
             <ul class="flex flex-row" v-if="forecasts.length">
