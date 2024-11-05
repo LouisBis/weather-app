@@ -6,7 +6,7 @@ defineProps(['dateStr', 'icon', "temp", "description", "error"])
 
 </script>
 <template>
-    <div class="p-3 h-auto mx-auto dark:bg-gray-700 bg-white rounded-xl shadow-md overflow-hidden">
+    <div class="p-6 h-auto mx-auto dark:bg-gray-700 bg-white rounded-xl shadow-md overflow-hidden h-full">
         <div v-if="error" class=" text-orange-600">
             <p>Error during weather fetching {{ error }}</p>
         </div>

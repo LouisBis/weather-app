@@ -37,9 +37,10 @@ const fetchWeather = async (lat, lon) => {
 
         <div v-if="city">
             <h2 class="text-2xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
-            <ul class="flex flex-row" v-if="forecasts.length">
+            <ul class="flex flex-row items-stretch" v-if="forecasts.length">
                 <li v-for="forecast in forecasts" :key="forecast.dt" class="p-3">
-                    <WeatherCard :icon="forecast.weather[0].icon" :dateStr="forecast.dt_txt" :temp="forecast.main.temp" :description="forecast.weather[0].description" />
+                    <WeatherCard :icon="forecast.weather[0].icon" :dateStr="forecast.dt_txt" :temp="forecast.main.temp"
+                        :description="forecast.weather[0].description" />
                 </li>
             </ul>
         </div>
