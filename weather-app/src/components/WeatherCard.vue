@@ -6,7 +6,7 @@ defineProps(['dateStr', 'icon', "temp", "description", "error"])
 
 </script>
 <template>
-    <div class="p-6 h-auto mx-auto dark:bg-gray-700 bg-white rounded-xl shadow-md overflow-hidden h-full">
+    <div class="p-6 mx-auto dark:bg-gray-700 bg-white rounded-xl shadow-md overflow-hidden h-full">
         <div v-if="error" class=" text-orange-600">
             <p>Error during weather fetching {{ error }}</p>
         </div>
@@ -19,7 +19,7 @@ defineProps(['dateStr', 'icon', "temp", "description", "error"])
             <p class=" text-xl text-gray-900 dark:text-lime-300">
                 {{ temp }}°C
             </p>
-            <p class="text-xl	text-gray-900 dark:text-lime-300">
+            <p class="text-xl	text-gray-900 dark:text-emerald-400">
                 {{ description }}
             </p>
         </div>
