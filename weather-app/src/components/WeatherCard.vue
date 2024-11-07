@@ -16,10 +16,10 @@ defineProps(['dateStr', 'icon', "temp", "description", "error"])
             </div>
 
             <WeatherIcons :icon="icon" />
-            <p class=" text-xl text-gray-900 dark:text-lime-300">
+            <p data-cy-temp class=" text-xl text-gray-900 dark:text-lime-300">
                 {{ temp }}°C
             </p>
-            <p class="text-xl	text-gray-900 dark:text-emerald-400">
+            <p class="text-xl text-gray-900 dark:text-emerald-400">
                 {{ description }}
             </p>
         </div>

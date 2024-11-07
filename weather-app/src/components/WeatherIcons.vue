@@ -13,21 +13,21 @@ defineProps(['icon'])
 </script>
 
 <template>
-    <IconWeather01d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
+    <IconWeather01d data-cy-weather class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
         v-if="icon === '01d' || icon === '01n'" />
-    <IconWeather02d class="fill-stone-400 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
+    <IconWeather02d data-cy-weather class="fill-stone-400 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
         v-if="icon === '02d' || icon === '02n'" />
-    <IconWeather03d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
+    <IconWeather03d data-cy-weather class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
         v-if="icon === '03d' || icon === '03n'" />
-    <IconWeather04d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
+    <IconWeather04d data-cy-weather class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
         v-if="icon === '04d' || icon === '04n'" />
-    <IconWeather09d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
+    <IconWeather09d data-cy-weather class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
         v-if="icon === '09d' || icon === '09n'" />
-    <IconWeather10d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
+    <IconWeather10d data-cy-weather class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
         v-if="icon === '10d' || icon === '10n'" />
-    <IconWeather13d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
+    <IconWeather13d data-cy-weather class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
         v-if="icon === '13d' || icon === '13n'" />
-    <IconWeather50d class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
+    <IconWeather50d data-cy-weather class="fill-amber-500 dark:fill-lime-300 animate-pulse w-48 md:w-56 lg:w-auto"
         v-if="icon === '50d' || icon === '50n'" />
 </template>
 

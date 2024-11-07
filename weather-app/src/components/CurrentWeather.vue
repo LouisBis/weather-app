@@ -35,9 +35,9 @@ onMounted(() => {
 <template>
   <div class="font-mono">
     <h1 class="text-xl text-gray-900 dark:text-lime-300">Current weather</h1>
-    <h2 class="text-xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
+    <h2 data-cy-city class="text-xl text-gray-900 dark:text-lime-400">{{ city }}</h2>
   </div>
-  <WeatherCard :icon="icon" :dateStr="date.value" :temp="temp" :error="error"/>
+  <WeatherCard :icon="icon" :dateStr="date.value" :temp="temp" :error="error" />
   <input type="text" v-model.trim="city" v-on:keyup.enter="fetchWeather"
     class="mt-6 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-white dark:border-none" />
 </template>
