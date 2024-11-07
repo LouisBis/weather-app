@@ -15,3 +15,11 @@ Replace XXX by your Api Key, available on <https://api.openweathermap.org> with 
 npm i
 npm run dev
 ```
+
+## Start testing part
+
+Make sure the app is running
+
+```bash
+px cypress open
+```
